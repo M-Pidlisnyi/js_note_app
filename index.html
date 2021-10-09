@@ -11,12 +11,12 @@
     <div class="content">
         <table id="table">
             <tr>
-            <th>Name</th>
-            <th>Created</th>
-            <th>Category</th>
-            <th>Content</th>
-            <th>Dates</th>
-            <th>Actions</th>
+                <th>Name</th>
+                <th>Created</th>
+                <th>Category</th>
+                <th>Content</th>
+                <th>Dates</th>
+                <th>Actions</th>
             </tr>
             <tr>
                 <td>Test note</td>
@@ -24,11 +24,41 @@
                 <td>Test category</td>
                 <td>Some very long text to see if table expands</td>
                 <td>test list of dates</td>
-                <td>here be buttons</td>
+                <td><span>&times</span></td>
             </tr>
         </table>
     </div>
-    <button class="createNote">Create Note</button>
+    <button class="openModal">Create Note</button>
+
+    <div id="modalForm" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="closeModal">&times;</span>
+                <h2>New note</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-header">
+                    <label for="name">Note name:</label>
+                    <input type="text" name="name" required>
+                    <label for="categories">Choose category: </label>
+                    <select name="categories" id="categories">
+                        <option value="">--.--.--.--.--.--.--.--</option>
+                        <option value="task">Task</option>
+                        <option value="random_thought">Random Thought</option>
+                        <option value="idea">Idea</option>
+                    </select>
+                </div>
+                <div class="modal-body-textarea">
+                    <label for="content">Enter your note here:</label>
+                    <br>
+                    <textarea name="content" rows="5" cols="100"></textarea>
+                </div>
+                <button class="saveNote">Save Note</button>
+            </div>
+            <div class="modal-footer"><br></div>
+        </div>
+    </div>
+
     <script type="module" src="script.js"></script>
 </body>
 </html>

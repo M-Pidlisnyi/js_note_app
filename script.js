@@ -1,4 +1,4 @@
-import {createNote} from "./modules/createNote.js";
+import {createNote, closeModal, openModal} from "./modules/createNote.js";
 
 export const fieldsOrder = {
     0: "name",
@@ -10,12 +10,6 @@ export const fieldsOrder = {
 };
 
 
-export const dataReciever = () =>{
-    const inputs = document.querySelectorAll("input");
-
-    _name = inputs.name.value;
-}
-
 export const test_data = {
     name: "name",
     created: "date",
@@ -25,8 +19,24 @@ export const test_data = {
     actions: "actions"
 };
 
-const createNoteButton = document.querySelector(".createNote");
-createNoteButton.addEventListener("click", () => createNote(test_data));
+
+
+
+const openModalButton = document.querySelector(".openModal");
+openModalButton.addEventListener("click", () => openModal());
+
+const closeModalButton = document.querySelector(".closeModal");
+closeModalButton.addEventListener("click", () => closeModal());
+
+const saveNoteButton = document.querySelector(".saveNote");
+saveNoteButton.addEventListener("click", () => {
+    createNote(test_data);
+    closeModal();
+});
+
+
+
+
 
 
 
